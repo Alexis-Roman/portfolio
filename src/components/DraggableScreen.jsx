@@ -1,13 +1,13 @@
 import { Rnd } from "react-rnd";
 
-const DraggableScreen = ({ title, onClose }) => {
+const DraggableScreen = ({ title, defaultWidth, defaultHeight, onClose, children }) => {
   return (
     <Rnd
       default={{
         x: 100,
         y: 100,
-        width: 400,
-        height: 300,
+        width: defaultWidth,
+        height: defaultHeight,
       }}
       minWidth={200}
       minHeight={150}
@@ -23,10 +23,7 @@ const DraggableScreen = ({ title, onClose }) => {
       </div>
 
       {/* Content */}
-      <div className="p-4 flex-1 overflow-auto">
-        <p>This is the {title} content!</p>
-        <p>Add your About Me text here.</p>
-      </div>
+      <div className="p-4 flex-1 overflow-auto">{children}</div>
     </Rnd>
   );
 };
