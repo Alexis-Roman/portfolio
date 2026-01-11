@@ -1,1 +1,18 @@
+@font-face {
+    font-family: Jersey;
+    src: url(../src/assets/fonts/Jersey10-Regular.ttf);
+}
+
+@font-face {
+    font-family: Pixel;
+    src: url(../src/assets/fonts/PixelifySans-Regular.ttf);
+}
 @import "tailwindcss";
+
+@theme{
+    --font-jersey: Jersey, "sans-serif";
+}
+
+@theme{
+    --font-pixel: Pixel, "sans-serif";
+}

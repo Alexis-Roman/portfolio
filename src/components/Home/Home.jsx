@@ -40,9 +40,9 @@ const Home = () => {
     pauseOnHover
   >
     <img
-      src="/images/cloud.webp" // long image already containing cloud1cloud2cloud3
+      src="/images/cloud.webp"
       alt="clouds"
-      className="h-120 w-auto object-contain block"
+      className="h-70 w-auto object-contain block"
     />
   </Marquee>
 </div>

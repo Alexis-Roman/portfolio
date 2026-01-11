@@ -3,7 +3,7 @@ import { faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
-    <nav className="h-14 bg-blue-300 flex items-center justify-between px-10 text-white font-semibold">
+    <nav className="font-jersey text-3xl h-14 bg-blue-300 flex items-center justify-between px-10 text-white">
       
       <span>Portfolio</span>
 
