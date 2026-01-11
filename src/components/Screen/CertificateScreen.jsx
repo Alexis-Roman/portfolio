@@ -25,10 +25,13 @@ const certificates = [
 const CertificateScreen = ({ onClose }) => {
   return (
     <DraggableScreen
-      title="Certificates"
-      defaultWidth={700}
+      title="certificates"
+      defaultWidth={700} 
       defaultHeight={400}
+      defaultX={420}
+      defaultY={80} 
       onClose={onClose}
+      color="bg-blue-500"
     >
       <div className="flex flex-row h-full p-4 space-x-4 overflow-x-auto">
         {certificates.map((cert, index) => (

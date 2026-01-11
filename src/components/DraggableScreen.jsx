@@ -1,24 +1,23 @@
 import { Rnd } from "react-rnd";
 
-const DraggableScreen = ({ title, defaultWidth, defaultHeight, onClose, children }) => {
+const DraggableScreen = ({ title, defaultWidth, defaultHeight, defaultX, defaultY, onClose, children, color }) => {
   return (
     <Rnd
       default={{
-        x: 100,
-        y: 100,
+        x: defaultX,
+        y: defaultY,
         width: defaultWidth,
         height: defaultHeight,
       }}
-      minWidth={200}
-      minHeight={150}
+      enableResizing={false}
       bounds="parent"
-      className="bg-white rounded-lg shadow-lg flex flex-col"
+      className="bg-white rounded-lg shadow-lg flex flex-col z-20"
     >
       {/* Header */}
-      <div className="bg-blue-500 text-white px-4 py-2 flex justify-between items-center rounded-t-lg">
+      <div className={`font-jersey text-xl text-white px-4 py-2 flex justify-between items-center rounded-t-lg ${color}`}>
         <span>{title}</span>
-        <button onClick={onClose} className="font-bold text-lg">
-          ✖
+        <button onClick={onClose} className="font-jersey text-xl">
+          X
         </button>
       </div>
 

@@ -25,6 +25,13 @@ const Home = () => {
     <div className="w-full h-screen bg-[linear-gradient(to_bottom,#FEF9C3_60%,#BFDBFE_40%)] flex flex-col relative overflow-hidden">
 
       <Navbar />
+
+      <div className="absolute top-[55%] left-0 w-full z-[5] flex justify-center pointer-events-none">
+        <span className="font-jersey text-7xl text-white tracking-widest select-none">
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        </span>
+      </div>
+      
       <div className="flex flex-col w-full"></div>
 
       <main className="flex-1 z-10 flex items-center justify-center">

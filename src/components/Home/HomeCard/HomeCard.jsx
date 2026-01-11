@@ -15,10 +15,10 @@ const HomeCard = ({ openScreen }) => {
 
       {/* Links */}
       <div className="font-pixel flex justify-center space-x-25">
-        <HomeLink icon={faIdCard} label="about me" onClick={() => openScreen("About Me")} />
-        <HomeLink icon={faBook} label="projects" onClick={() => openScreen("Project")} />
-        <HomeLink icon={faAward} label="certificates" onClick={() => openScreen("Certificate")} />
-        <HomeLink icon={faAt} label="contact" onClick={() => openScreen("Contact")} />
+        <HomeLink icon={faIdCard} color="text-red-500" label="about me"  onClick={() => openScreen("About Me")} />
+        <HomeLink icon={faBook} color="text-pink-400" label="projects" onClick={() => openScreen("Project")} />
+        <HomeLink icon={faAward} color="text-blue-500" label="certificates" onClick={() => openScreen("Certificate")} />
+        <HomeLink icon={faAt} color="text-amber-300" label="contact" onClick={() => openScreen("Contact")} />
       </div>
     </div>
   );

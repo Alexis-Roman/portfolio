@@ -7,10 +7,14 @@ const ProjectScreen = ({ onClose }) => {
 
   return (
     <DraggableScreen
-      title="Projects"
-      defaultWidth={600}
-      defaultHeight={400}
+      title="projects"
+      defaultWidth={500} 
+      defaultHeight={350}
+      defaultX={1000}
+      defaultY={100} 
       onClose={onClose}
+      color="bg-pink-400"
+      
     >
       <div className="flex flex-col h-full p-4 justify-center p-5">
 

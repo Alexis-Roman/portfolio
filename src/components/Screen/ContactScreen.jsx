@@ -3,10 +3,13 @@ import DraggableScreen from "../DraggableScreen";
 const ContactScreen = ({ onClose }) => {
   return (
     <DraggableScreen
-      title="Contact"
-      defaultWidth={500}
+      title="contact"
+      defaultWidth={400} 
       defaultHeight={250}
+      defaultX={550}
+      defaultY={455} 
       onClose={onClose}
+      color="bg-amber-300"
     >
       <div className="flex h-full items-center justify-center p-4">
         {/* Business card */}
