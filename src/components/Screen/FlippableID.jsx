@@ -38,7 +38,7 @@ const FlippableID = () => {
           <div className="relative flex flex-col">
 
             {/* Header */}
-            <div className="bg-pink-300 text-white h-8 tracking-widest font-jersey text-xl flex items-center justify-center rounded-t-lg">
+            <div className="bg-rose-300 text-white h-8 tracking-widest font-jersey text-xl flex items-center justify-center rounded-t-lg">
               <h1>IDENTIFICATION CARD</h1>
             </div>
 
@@ -73,7 +73,7 @@ const FlippableID = () => {
 
             </div>
 
-            <div className="tracking-widest bg-pink-300 text-white h-6 font-jersey text-sm flex items-center justify-center rounded-b-lg">
+            <div className="tracking-widest bg-rose-300 text-white h-6 font-jersey text-sm flex items-center justify-center rounded-b-lg">
               <h1>If found please return to owner.</h1>
             </div>
 
@@ -106,7 +106,7 @@ const FlippableID = () => {
         </div>
 
         {/* Header */}
-        <div className="tracking-widest text-white bg-pink-300 h-8 font-jersey text-xl flex items-center justify-center rounded-t-lg z-10">
+        <div className="tracking-widest text-white bg-rose-300 h-8 font-jersey text-xl flex items-center justify-center rounded-t-lg z-10">
           <h1>IDENTIFICATION CARD</h1>
         </div>
 
@@ -153,7 +153,7 @@ const FlippableID = () => {
         </div>
 
         {/* Footer */}
-        <div className="tracking-widest text-white bg-pink-300 h-6 font-jersey text-sm flex items-center justify-center rounded-b-lg z-10">
+        <div className="tracking-widest text-white bg-rose-300 h-6 font-jersey text-sm flex items-center justify-center rounded-b-lg z-10">
           <h1>If found please return to owner.</h1>
         </div>
 

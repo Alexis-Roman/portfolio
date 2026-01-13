@@ -22,8 +22,8 @@ const ContactScreen = ({ onClose }) => {
           {/* Right: Contact Details */}
           <div className="flex-1 ml-4 flex flex-col justify-center space-y-1">
             <h2 className="text-xl font-bold">Alexis Nicole Roman</h2>
-            <p className="text-gray-600">Email: romanalexisnicole67@gmail.com</p>
-            <p className="text-gray-600">Phone: +63 920 291 0437</p>
+            <p className="text-gray-600">romanalexisnicole67@gmail.com</p>
+            <p className="text-gray-600">+63 920 291 0437</p>
             <p className="text-gray-600">Website: will put link</p>
           </div>
         </div>

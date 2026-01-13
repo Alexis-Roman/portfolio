@@ -3,21 +3,21 @@ import DraggableScreen from "../DraggableScreen";
 
 const certificates = [
   {
-    title: "React Developer Certificate",
-    issuer: "FreeCodeCamp",
-    date: "Jan 2025",
+    title: "Programming (Java) NC III",
+    issuer: "TESDA",
+    date: "Oct 2025",
     file: "/certificates/react_cert.jpg", // JPEG or PDF path
   },
   {
-    title: "Python Data Science",
-    issuer: "Coursera",
-    date: "Dec 2024",
+    title: "Supervised Industry Learning in Programming (Java) NC III",
+    issuer: "Spring Valley Tech Corp",
+    date: "Oct 2025",
     file: "/certificates/python_cert.jpg",
   },
   {
-    title: "UI/UX Design Basics",
-    issuer: "Udemy",
-    date: "Nov 2024",
+    title: "Nihongo for Everyone 1: Basic Japanese Language for Beginners",
+    issuer: "Ateneo de Manila University",
+    date: "Sept 2019",
     file: "/certificates/uiux_cert.jpg",
   },
 ];
@@ -27,7 +27,7 @@ const CertificateScreen = ({ onClose }) => {
     <DraggableScreen
       title="certificates"
       defaultWidth={700} 
-      defaultHeight={400}
+      defaultHeight={500}
       defaultX={420}
       defaultY={80} 
       onClose={onClose}
@@ -37,7 +37,7 @@ const CertificateScreen = ({ onClose }) => {
         {certificates.map((cert, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-64 bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow"
+            className="flex-shrink-0 w-50 bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow"
           >
             {/* Thumbnail */}
             <div className="w-full h-32 bg-gray-200 rounded-md overflow-hidden mb-4 flex items-center justify-center">
