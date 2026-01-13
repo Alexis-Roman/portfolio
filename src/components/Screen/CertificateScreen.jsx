@@ -6,19 +6,19 @@ const certificates = [
     title: "Programming (Java) NC III",
     issuer: "TESDA",
     date: "Oct 2025",
-    file: "/certificates/react_cert.jpg",
+    file: "/images/tesda-java.jpg",
   },
   {
     title: "Supervised Industry Learning in Programming (Java) NC III",
     issuer: "Spring Valley Tech Corp",
     date: "Oct 2025",
-    file: "/certificates/python_cert.jpg",
+    file: "/images/spring valley.jpg",
   },
   {
     title: "Nihongo for Everyone 1: Basic Japanese Language for Beginners",
     issuer: "Ateneo de Manila University",
     date: "Sept 2019",
-    file: "/certificates/uiux_cert.jpg",
+    file: "/images/jap-cert.png",
   },
 ];
 
@@ -51,10 +51,10 @@ const CertificateScreen = ({ onClose }) => {
           {certificates.map((cert, i) => (
             <div
               key={i}
-              className="w-full flex-shrink-0 flex flex-col items-center justify-center p-6"
+              className="bg-blue-100 w-full flex-shrink-0 flex flex-row items-center justify-start p-6 space-x-4"
             >
               {/* Certificate image */}
-              <div className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden mb-4 flex items-center justify-center">
+              <div className="w-7/10 h-90 bg-blue-100 rounded-lg overflow-hidden flex items-center justify-center">
                 {cert.file.endsWith(".pdf") ? (
                   <span className="text-red-500 font-bold text-xl">PDF</span>
                 ) : (
@@ -67,19 +67,10 @@ const CertificateScreen = ({ onClose }) => {
               </div>
 
               {/* Details */}
-              <div className="text-center">
+              <div className="w-3/10 text-left ">
                 <h3 className="text-xl font-bold">{cert.title}</h3>
                 <p className="text-gray-600">{cert.issuer}</p>
                 <p className="text-gray-600">{cert.date}</p>
-
-                <a
-                  href={cert.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline mt-2 inline-block"
-                >
-                  View Certificate
-                </a>
               </div>
             </div>
           ))}
