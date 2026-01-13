@@ -36,7 +36,7 @@ const CertificateScreen = ({ onClose }) => {
       defaultWidth={700}
       defaultHeight={500}
       defaultX={420}
-      defaultY={80}
+      defaultY={60}
       onClose={onClose}
       color="bg-blue-500"
     >
