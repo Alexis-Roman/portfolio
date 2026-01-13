@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DraggableScreen from "../DraggableScreen";
 
 const certificates = [
@@ -6,7 +6,7 @@ const certificates = [
     title: "Programming (Java) NC III",
     issuer: "TESDA",
     date: "Oct 2025",
-    file: "/certificates/react_cert.jpg", // JPEG or PDF path
+    file: "/certificates/react_cert.jpg",
   },
   {
     title: "Supervised Industry Learning in Programming (Java) NC III",
@@ -23,53 +23,93 @@ const certificates = [
 ];
 
 const CertificateScreen = ({ onClose }) => {
+  const [index, setIndex] = useState(0);
+
+  const next = () =>
+    setIndex((i) => (i + 1) % certificates.length);
+
+  const prev = () =>
+    setIndex((i) => (i - 1 + certificates.length) % certificates.length);
+
   return (
     <DraggableScreen
       title="certificates"
-      defaultWidth={700} 
+      defaultWidth={700}
       defaultHeight={500}
       defaultX={420}
-      defaultY={80} 
+      defaultY={80}
       onClose={onClose}
       color="bg-blue-500"
     >
-      <div className="flex flex-row h-full p-4 space-x-4 overflow-x-auto">
-        {certificates.map((cert, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 w-50 bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow"
-          >
-            {/* Thumbnail */}
-            <div className="w-full h-32 bg-gray-200 rounded-md overflow-hidden mb-4 flex items-center justify-center">
-              {cert.file.endsWith(".pdf") ? (
-                <span className="text-red-500 font-bold">PDF</span>
-              ) : (
-                <img
-                  src={cert.file}
-                  alt={cert.title}
-                  className="w-full h-full object-cover"
-                />
-              )}
-            </div>
+      <div className="relative h-full overflow-hidden">
+        {/* Sliding track */}
+        <div
+          className="flex h-full transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {certificates.map((cert, i) => (
+            <div
+              key={i}
+              className="w-full flex-shrink-0 flex items-center justify-center p-6"
+            >
+              {/* Certificate with hover overlay */}
+              <div className="relative w-full h-72 rounded-lg overflow-hidden group bg-gray-200">
+                {cert.file.endsWith(".pdf") ? (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-red-500 font-bold text-xl">PDF</span>
+                  </div>
+                ) : (
+                  <img
+                    src={cert.file}
+                    alt={cert.title}
+                    className="w-full h-full object-contain"
+                  />
+                )}
 
-            {/* Details */}
-            <div className="flex flex-col">
-              <h3 className="text-lg font-bold">{cert.title}</h3>
-              <p className="text-gray-600">Issuer: {cert.issuer}</p>
-              <p className="text-gray-600">Date: {cert.date}</p>
-              {cert.file && (
-                <a
-                  href={cert.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline mt-1"
+                {/* Hover details */}
+                <div
+                  className="absolute inset-0 bg-black/80 text-white
+                             opacity-0 group-hover:opacity-100
+                             transition-opacity duration-300
+                             flex flex-col items-center justify-center
+                             text-center p-4"
                 >
-                  View Certificate
-                </a>
-              )}
+                  <h3 className="text-xl font-bold mb-2">{cert.title}</h3>
+                  <p className="text-sm">{cert.issuer}</p>
+                  <p className="text-sm mb-3">{cert.date}</p>
+
+                  <a
+                    href={cert.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-sm"
+                  >
+                    View Certificate
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Controls */}
+        <button
+          onClick={prev}
+          className="absolute left-4 top-1/2 -translate-y-1/2
+                     bg-white/80 rounded-full p-3 hover:bg-white
+                     text-xl font-bold select-none"
+        >
+          {"<"}
+        </button>
+
+        <button
+          onClick={next}
+          className="absolute right-4 top-1/2 -translate-y-1/2
+                     bg-white/80 rounded-full p-3 hover:bg-white
+                     text-xl font-bold select-none"
+        >
+          {">"}
+        </button>
       </div>
     </DraggableScreen>
   );
