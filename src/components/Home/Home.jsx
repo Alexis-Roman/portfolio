@@ -38,7 +38,7 @@ const Home = () => {
         <HomeCard openScreen={openScreen} />
       </main>
 
-<div className="absolute z-0 bottom-0 left-0 w-full h-[40%] overflow-hidden pointer-events-none">
+<div className="absolute z-0 bottom-0 left-0 w-full h-[42%] overflow-hidden pointer-events-none">
   <Marquee
     speed={20}
     gradient={false}

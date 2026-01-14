@@ -1,6 +1,8 @@
 import React from "react";
 import DraggableScreen from "../DraggableScreen";
 import Marquee from "react-fast-marquee";
+import FilmHoles from "../FilmHoles";
+
 
 const ProjectScreen = ({ onClose }) => {
   const items = [
@@ -40,13 +42,13 @@ const ProjectScreen = ({ onClose }) => {
     <DraggableScreen
       title="projects"
       defaultWidth={500}
-      defaultHeight={350}
+      defaultHeight={390}
       defaultX={1000}
       defaultY={100}
       onClose={onClose}
       color="bg-pink-400"
     >
-      <div className="h-full w-full flex items-center p-4">
+      <div className="h-full w-full flex flex-col items-center pb-4">
         <Marquee
           pauseOnHover
           speed={60}
@@ -54,6 +56,17 @@ const ProjectScreen = ({ onClose }) => {
           autoFill
           className="w-full h-full flex items-center"
         >
+          <FilmHoles />
+        </Marquee>
+        
+        <Marquee
+          pauseOnHover
+          speed={60}
+          gradient={false}
+          autoFill
+          className="w-full h-full flex items-center"
+        >
+        
           {items.map((item, index) => (
             <div
               key={index}
@@ -81,6 +94,17 @@ const ProjectScreen = ({ onClose }) => {
             </div>
           ))}
         </Marquee>
+
+        <Marquee
+          pauseOnHover
+          speed={60}
+          gradient={false}
+          autoFill
+          className="w-full h-full flex items-center"
+        >
+          <FilmHoles />
+        </Marquee>
+
       </div>
     </DraggableScreen>
   );
