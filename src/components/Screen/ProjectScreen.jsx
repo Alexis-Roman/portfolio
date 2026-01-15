@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import DraggableScreen from "../DraggableScreen";
 import Marquee from "react-fast-marquee";
 import FilmHoles from "../FilmHoles";
 
-
 const ProjectScreen = ({ onClose }) => {
+  const [isPaused, setIsPaused] = useState(false);
+
+  const handleEnter = () => setIsPaused(true);
+  const handleLeave = () => setIsPaused(false);
+
   const items = [
     {
       title: "FOX-e Bank",
@@ -42,52 +46,51 @@ const ProjectScreen = ({ onClose }) => {
     <DraggableScreen
       title="projects"
       defaultWidth={500}
-      defaultHeight={390}
+      defaultHeight={430}
       defaultX={1000}
       defaultY={100}
       onClose={onClose}
       color="bg-pink-400"
     >
-      <div className="h-full w-full flex flex-col items-center pb-4">
+      <div
+        className="h-full w-full flex flex-col items-center pb-4"
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+      >
+        {/* TOP FILM HOLES */}
         <Marquee
-          pauseOnHover
+          play={!isPaused}
           speed={60}
           gradient={false}
           autoFill
-          className="w-full h-full flex items-center"
+          className="w-full flex items-center pb-2 bg-pink-200"
         >
           <FilmHoles />
         </Marquee>
-        
+
+        {/* PROJECTS */}
         <Marquee
-          pauseOnHover
+          play={!isPaused}
           speed={60}
           gradient={false}
           autoFill
-          className="w-full h-full flex items-center"
+          className="w-full flex items-center bg-pink-200"
         >
-        
           {items.map((item, index) => (
             <div
               key={index}
-              className="relative mx-4 w-48 h-64 rounded-xl shadow-sm overflow-hidden group cursor-pointer flex items-center justify-center bg-gray-100"
+              className="rounded-xl relative mx-4 w-48 h-64 shadow-sm overflow-hidden group cursor-pointer flex items-center justify-center bg-gray-100"
             >
-              {/* Project Image */}
-              {item.image && (
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-contain bg-pink-100 p-2"
-                />
-              )}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="rounded-xl w-full h-full object-contain bg-white p-2"
+              />
 
-              {/* Hover overlay: title + description */}
-              <div
-                className="absolute inset-0 bg-black/80 text-white p-4
-                           flex flex-col items-center justify-center text-center
-                           text-sm opacity-0 transition-opacity duration-300
-                           group-hover:opacity-100"
-              >
+              <div className="absolute inset-0 bg-black/80 text-white p-4
+                              flex flex-col items-center justify-center text-center
+                              text-sm opacity-0 transition-opacity duration-300
+                              group-hover:opacity-100">
                 <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                 <p>{item.description}</p>
               </div>
@@ -95,16 +98,16 @@ const ProjectScreen = ({ onClose }) => {
           ))}
         </Marquee>
 
+        {/* BOTTOM FILM HOLES */}
         <Marquee
-          pauseOnHover
+          play={!isPaused}
           speed={60}
           gradient={false}
           autoFill
-          className="w-full h-full flex items-center"
+          className="w-full flex items-center pt-2 bg-pink-200"
         >
           <FilmHoles />
         </Marquee>
-
       </div>
     </DraggableScreen>
   );
