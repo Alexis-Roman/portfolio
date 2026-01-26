@@ -44,7 +44,7 @@ const ContactScreen = ({ onClose }) => {
 
             <div className="flex items-center text-gray-600 space-x-2">
               <FontAwesomeIcon icon={faGlobe} />
-              <span>yourwebsite.com</span>
+              <span>https://www.linkedin.com/in/alexis-nicole-roman-a62792319/</span>
             </div>
           </div>
         </div>
